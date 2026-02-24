@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-platinum: var(--color-platinum);
+  --color-surface: var(--color-surface);
+  --color-asphalt: var(--color-asphalt);
+  --color-grey-apple: var(--color-grey-apple);
+  --color-border: var(--color-border);
+}
+
+@layer base {
+  :root {
+    --color-platinum: #FAFAFA;
+    --color-surface: #FFFFFF;
+    --color-asphalt: #050505;
+    --color-grey-apple: #666666;
+    --color-border: #E5E5E5;
+  }
+
+  .dark {
+    --color-platinum: #0A0A0A;
+    --color-surface: #171717;
+    --color-asphalt: #EDEDED;
+    --color-grey-apple: #A1A1AA;
+    --color-border: #27272A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-platinum text-asphalt font-sans antialiased selection:bg-asphalt selection:text-platinum;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
